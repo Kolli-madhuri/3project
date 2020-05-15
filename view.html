@@ -16,6 +16,8 @@
                 <th>Phno</th>
                 <th>Gender</th>
                 <th>Languages</th>
+                <th></th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +33,16 @@
                 <td>{{d[7]}}</td>
                 <td>{{d[8]}}</td>
                 <td>{{d[9]}}</td>
+                 <td>
+                    <from action="{{url_for('edit')}}" method="POST">
+                       <button value={{d[0]}} name="edit">Edit</button>
+                    </from>
+                </td>
+                <td>
+                <from action="{{url_for('delete')}}" method="POST">
+                       <button value={{d[0]}} name="delete">Delete</button>
+                    </from>
+                </td>    
                  
             </tr>
             {% endfor %}
